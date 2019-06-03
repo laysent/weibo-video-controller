@@ -1,0 +1,22 @@
+{
+  "name": "weibo-video-controller",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Add buttons that helps control video in weibo.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "userscript"
+  ],
+  "pre-commit": [
+    "build"
+  ],
+  "author": "LaySent",
+  "license": "MIT",
+  "devDependencies": {
+    "pre-commit": "^1.2.2",
+    "typescript": "^3.5.1"
+  }
+}
