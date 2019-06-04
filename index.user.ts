@@ -5,8 +5,8 @@
 // @description Add buttons that helps control video in weibo.
 // @homepage    https://github.com/laysent/weibo-video-controller
 // @include     /^https?://(www\.)?weibo\.com/.*$/
-// @downloadURL https://github.com/laysent/weibo-video-controller/index.user.js
-// @updateURL   https://raw.githubusercontent.com/laysent/weibo-video-controller/master/index.user.js
+// @downloadURL https://github.com/laysent/weibo-video-controller/raw/master/index.user.js
+// @updateURL   https://github.com/laysent/weibo-video-controller/raw/master/index.user.js
 // @supportURL  https://github.com/laysent/weibo-video-controller/issues
 // @run-at      document-end
 // @license     MIT License

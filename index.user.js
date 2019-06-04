@@ -1,13 +1,13 @@
 // ==UserScript==
-// @name        Weibo Video Button
+// @name        Weibo Video Controller
 // @author      LaySent
 // @version     1.0.0
 // @description Add buttons that helps control video in weibo.
-// @homepage    https://github.com/laysent/weibo-video-button
+// @homepage    https://github.com/laysent/weibo-video-controller
 // @include     /^https?://(www\.)?weibo\.com/.*$/
-// @downloadURL https://github.com/laysent/weibo-video-button/index.user.js
-// @updateURL   https://raw.githubusercontent.com/laysent/weibo-video-button/master/index.user.js
-// @supportURL  https://github.com/laysent/weibo-video-button/issues
+// @downloadURL https://github.com/laysent/weibo-video-controller/raw/master/index.user.js
+// @updateURL   https://github.com/laysent/weibo-video-controller/raw/master/index.user.js
+// @supportURL  https://github.com/laysent/weibo-video-controller/issues
 // @run-at      document-end
 // @license     MIT License
 // ==/UserScript==
@@ -40,6 +40,15 @@ function downloadResource(link) {
     a.click();
     document.body.removeChild(a);
 }
+/**
+ * Tries to add click event to download button, which will do the following things:
+ * 1. if video finished downloading, will try use fetch and blob to get same-origin data url
+ * 2. if done, use this same-origin data url when click, which will start download right away
+ * 3. otherwise download will act like opening video in new tab, which requires further steps to
+ * manually download the video.
+ * @param button Download Button
+ * @param video Video Element
+ */
 function addDownloadEventListener(button, video) {
     let sameOriginLink = null;
     video.addEventListener('canplaythrough', () => {
